@@ -35,7 +35,7 @@ export default function Hero() {
       {/* Background Video Layer */}
       <div className="hero__bg">
         <video
-          src="/videos/poster.MOV"
+          src={`${import.meta.env.BASE_URL}videos/video.mp4`}
           autoPlay
           loop
           muted
@@ -55,7 +55,7 @@ export default function Hero() {
             animate="visible"
             variants={fadeUp}
           >
-            OUSE LOVE <span className="text-gradient">RECORDS</span>
+            HOUSE LOVE <span className="text-gradient">RECORDS</span>
           </motion.h1>
 
           <motion.p
