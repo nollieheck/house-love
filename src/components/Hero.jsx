@@ -50,13 +50,13 @@ export default function Hero() {
         <div className="hero__text">
           <motion.h1
             className="display-lg hero__title"
-            style={{ fontSize: 'clamp(1.5rem, 5vw, 4.5rem)', whiteSpace: 'nowrap', color: '#000' }}
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', color: '#000', lineHeight: '0.85' }}
             custom={0}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
           >
-            HOUSE LOVE RECORDS
+            HOUSE LOVE <br /> RECORDS
           </motion.h1>
 
           <motion.p
