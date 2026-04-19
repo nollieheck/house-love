@@ -49,7 +49,7 @@ export default function Hero() {
       <div className="hero__content">
         <div className="hero__text">
           <motion.h1
-            className="hero__title"
+            className="display-lg hero__title"
             style={{ fontSize: 'clamp(1.5rem, 5vw, 4.5rem)', whiteSpace: 'nowrap', color: '#000' }}
             custom={0}
             initial="hidden"
