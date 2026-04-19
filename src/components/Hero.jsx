@@ -49,13 +49,14 @@ export default function Hero() {
       <div className="hero__content">
         <div className="hero__text">
           <motion.h1
-            className="display-lg hero__title"
+            className="hero__title"
+            style={{ fontSize: 'clamp(1.5rem, 5vw, 4.5rem)', whiteSpace: 'nowrap', color: '#000' }}
             custom={0}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
           >
-            HOUSE LOVE <span className="text-gradient">RECORDS</span>
+            HOUSE LOVE RECORDS
           </motion.h1>
 
           <motion.p
@@ -78,14 +79,14 @@ export default function Hero() {
           >
             <a
               href="#events"
-              className="hero__btn-primary gradient-btn"
+              className="hero__btn-black"
               onClick={(e) => handleScroll(e, '#events')}
             >
               <span>Explore Events</span>
             </a>
             <a
               href="#vision"
-              className="hero__btn-secondary"
+              className="hero__btn-black"
               onClick={(e) => handleScroll(e, '#vision')}
             >
               Listen Now

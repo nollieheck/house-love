@@ -87,7 +87,7 @@
   padding-top: 0.5rem;
 }
 
-.hero__btn-primary {
+.hero__btn-black {
   padding: 1rem 2rem;
   border-radius: var(--radius-full);
   font-family: var(--font-label);
@@ -98,34 +98,18 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  box-shadow: 0 8px 25px rgba(88, 94, 117, 0.2);
-}
-
-.hero__btn-primary:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 12px 35px rgba(88, 94, 117, 0.3);
-}
-
-.hero__btn-secondary {
-  padding: 1rem 2rem;
-  border-radius: var(--radius-full);
-  font-family: var(--font-label);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  background: var(--surface-container-highest);
-  color: var(--on-surface);
-  border: none;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
   cursor: pointer;
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.hero__btn-secondary:hover {
-  background: var(--surface-variant);
-  transform: translateY(-2px);
+.hero__btn-black:hover {
+  background: #222;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* Release Card */
