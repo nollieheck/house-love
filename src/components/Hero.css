@@ -1,0 +1,228 @@
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1.5rem 4rem;
+  overflow: hidden;
+  background-color: var(--surface);
+}
+
+/* Background */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 249, 245, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+/* Content Grid */
+.hero__content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 76rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero__content {
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+}
+
+/* Text */
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .hero__text {
+    padding-right: 3rem;
+  }
+}
+
+.hero__title {
+  color: var(--on-surface);
+}
+
+.hero__subtitle {
+  color: var(--on-surface-variant);
+  max-width: 40rem;
+}
+
+/* Buttons */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.hero__btn-primary {
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 8px 25px rgba(88, 94, 117, 0.2);
+}
+
+.hero__btn-primary:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 12px 35px rgba(88, 94, 117, 0.3);
+}
+
+.hero__btn-secondary {
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  background: var(--surface-container-highest);
+  color: var(--on-surface);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero__btn-secondary:hover {
+  background: var(--surface-variant);
+  transform: translateY(-2px);
+}
+
+/* Release Card */
+.hero__card-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .hero__card-wrapper {
+    margin-top: 6rem;
+  }
+}
+
+.hero__release-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  width: 100%;
+  max-width: 20rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero__release-glow {
+  position: absolute;
+  top: -2.5rem;
+  right: -2.5rem;
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(135deg, #C3B1E1, #AEC6CF);
+  border-radius: 50%;
+  filter: blur(48px);
+  opacity: 0.6;
+}
+
+.hero__release-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.hero__release-label {
+  color: var(--primary);
+}
+
+.hero__play-icon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.hero__play-icon:hover {
+  transform: scale(1.2);
+  color: var(--primary-dim);
+}
+
+.hero__release-title {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  color: var(--on-surface);
+}
+
+.hero__release-artist {
+  font-family: var(--font-label);
+  font-size: 0.625rem;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+/* Waveform */
+.hero__waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 3rem;
+  opacity: 0.6;
+}
+
+.hero__waveform-bar {
+  flex: 1;
+  background: var(--primary);
+  border-radius: var(--radius-full);
+  transform-origin: bottom;
+}
+
+.hero__waveform-bar:nth-child(-n+2) {
+  background: var(--surface-dim);
+}
+
+.hero__waveform-bar:nth-child(n+5) {
+  background: var(--surface-dim);
+}

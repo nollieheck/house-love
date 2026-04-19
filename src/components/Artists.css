@@ -1,0 +1,134 @@
+/* ============================================
+   ARTISTS SECTION
+   ============================================ */
+
+.artists {
+  padding: 8rem 1.5rem;
+  background-color: var(--surface);
+  position: relative;
+  z-index: 1;
+}
+
+.artists__container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Header */
+.artists__header {
+  max-width: 40rem;
+  margin-bottom: 4rem;
+}
+
+.artists__label {
+  color: var(--primary);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.artists__title {
+  color: var(--on-surface);
+  margin-bottom: 1rem;
+}
+
+.artists__desc {
+  color: var(--on-surface-variant);
+}
+
+/* Grid */
+.artists__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .artists__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .artists__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card */
+.artists__card {
+  cursor: pointer;
+  transition: transform var(--transition-normal);
+}
+
+.artists__card:hover {
+  transform: translateY(-6px);
+}
+
+.artists__card-img-wrapper {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.artists__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.artists__card:hover .artists__card-img {
+  transform: scale(1.08);
+}
+
+.artists__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(88, 94, 117, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.artists__card:hover .artists__card-overlay {
+  opacity: 1;
+}
+
+.artists__card-play {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.5rem;
+  transform: scale(0.8);
+  transition: transform var(--transition-fast);
+}
+
+.artists__card:hover .artists__card-play {
+  transform: scale(1);
+}
+
+.artists__card-name {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--on-surface);
+  margin-bottom: 0.25rem;
+}
+
+.artists__card-genre {
+  font-family: var(--font-label);
+  font-size: 0.625rem;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}

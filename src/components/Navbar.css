@@ -1,0 +1,204 @@
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  scale: 0.95;
+  z-index: 50;
+  width: 95%;
+  max-width: 64rem;
+  margin-top: 1.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow: 0 20px 50px rgba(47, 51, 47, 0.08);
+  transition: all var(--transition-normal);
+}
+
+.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  scale: 0.9;
+  margin-top: 1rem;
+}
+
+.navbar--open {
+  border-radius: 2rem;
+}
+
+.navbar__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0.75rem 2rem;
+}
+
+.navbar__logo {
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: -0.03em;
+  color: var(--on-surface);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+  justify-self: start;
+  text-transform: uppercase;
+}
+
+.navbar__logo:hover {
+  opacity: 0.7;
+}
+
+/* Desktop Links */
+.navbar__links {
+  display: none;
+  gap: 2.5rem;
+  align-items: center;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .navbar__links {
+    display: flex;
+  }
+}
+
+.navbar__link {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color var(--transition-fast);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--primary);
+  transition: width var(--transition-normal);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--on-surface);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 100%;
+}
+
+/* CTA */
+.navbar__cta {
+  display: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-label);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .navbar__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-self: end;
+  }
+}
+
+.navbar__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(88, 94, 117, 0.25);
+}
+
+/* Burger */
+.navbar__burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  justify-self: end;
+}
+
+@media (min-width: 768px) {
+  .navbar__burger {
+    display: none;
+  }
+}
+
+.navbar__burger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--on-surface);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+  transform-origin: center;
+}
+
+.navbar__burger-line--open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__burger-line--open:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar__burger-line--open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.navbar__mobile {
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.navbar__mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0.5rem 1.75rem 1.25rem;
+}
+
+.navbar__mobile-link {
+  display: block;
+  padding: 0.75rem 0;
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link--active {
+  color: var(--on-surface);
+}
