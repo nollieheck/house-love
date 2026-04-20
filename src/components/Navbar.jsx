@@ -94,9 +94,9 @@ export default function Navbar() {
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
         >
-          <span className={`navbar__burger-line ${mobileOpen ? 'navbar__burger-line--open' : ''}`} />
-          <span className={`navbar__burger-line ${mobileOpen ? 'navbar__burger-line--open' : ''}`} />
-          <span className={`navbar__burger-line ${mobileOpen ? 'navbar__burger-line--open' : ''}`} />
+          <span className="material-symbols-outlined" style={{ fontSize: '1.75rem' }}>
+            {mobileOpen ? 'close' : 'keyboard_arrow_down'}
+          </span>
         </button>
       </div>
 

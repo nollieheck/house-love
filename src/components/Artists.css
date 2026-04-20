@@ -17,13 +17,14 @@
 /* Header */
 .artists__header {
   max-width: 40rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .artists__label {
   color: var(--primary);
   display: block;
   margin-bottom: 1.5rem;
+  font-size: 0.8rem;
 }
 
 .artists__title {
@@ -131,4 +132,231 @@
   color: var(--on-surface-variant);
   text-transform: uppercase;
   letter-spacing: 0.15em;
+}
+
+/* Hide Navbar when modal is open */
+body.modal-open .navbar {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-20px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.artist-modal-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3000; /* Súper alto para tapar el Navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrado vertical para evitar el margen inferior */
+  padding: 0; /* Sin padding para que el fondo sea total */
+  overflow: hidden;
+}
+
+.artist-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Un poco más oscuro */
+  backdrop-filter: blur(15px);
+}
+
+.artist-modal__scroll-container {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+  scrollbar-width: none;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.artist-modal__scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.artist-modal__content {
+  background: #141414; /* Color oscuro estilo Netflix */
+  color: white;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.artist-modal__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  background: #141414;
+  color: white;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.artist-modal__close:hover {
+  transform: scale(1.1);
+}
+
+.artist-modal__hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.artist-modal__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-modal__hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, #141414, transparent);
+}
+
+.artist-modal__hero-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  right: 3rem;
+}
+
+.artist-modal__name {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.artist-modal__hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.artist-modal__play-btn-black {
+  background: white;
+  color: black;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artist-modal__play-btn-black:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.artist-modal__social-btn {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.artist-modal__social-btn:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+  color: white;
+}
+
+.artist-modal__social-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.artist-modal__social-btn:hover svg {
+  transform: rotate(5deg);
+}
+
+.artist-modal__body {
+  padding: 2rem 3rem 4rem;
+}
+
+.artist-modal__details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.artist-modal__description {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.artist-modal__side-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.text-muted {
+  color: #777;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .artist-modal-root {
+    padding: 0;
+  }
+  
+  .artist-modal__scroll-container {
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  
+  .artist-modal__hero-content {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .artist-modal__body {
+    padding: 1.5rem;
+  }
+  
+  .artist-modal__details-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .artist-modal__play-btn-black {
+    width: 100%;
+  }
 }

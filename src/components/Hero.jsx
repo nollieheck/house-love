@@ -50,13 +50,12 @@ export default function Hero() {
         <div className="hero__text">
           <motion.h1
             className="display-lg hero__title"
-            style={{ fontSize: 'clamp(1.5rem, 5vw, 4.5rem)', color: '#000', lineHeight: '0.85' }}
             custom={0}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
           >
-            <span style={{ whiteSpace: 'nowrap' }}>HOUSE LOVE</span> <br /> RECORDS
+            HOUSE LOVE <br className="desktop-only-br" /> RECORDS
           </motion.h1>
 
           <motion.p
@@ -66,8 +65,9 @@ export default function Hero() {
             animate="visible"
             variants={fadeUp}
           >
-            A curated gallery of sound. We capture the moment the sun breaks through
-            the windows of a premium studio—nocturnal in spirit, luminous in execution.
+            Sello discográfico de música house desde Córdoba, Argentina.
+            <br className="desktop-only-br" />
+            Groove, cultura de pista y comunidad con identidad propia.
           </motion.p>
 
           <motion.div
@@ -82,14 +82,14 @@ export default function Hero() {
               className="hero__btn-black"
               onClick={(e) => handleScroll(e, '#events')}
             >
-              <span>Explore Events</span>
+              <span>CONOCER EVENTOS</span>
             </a>
             <a
               href="#vision"
               className="hero__btn-black"
               onClick={(e) => handleScroll(e, '#vision')}
             >
-              Listen Now
+              REPRODUCIR
             </a>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ export default function Hero() {
           <div className="hero__release-card glass-panel ambient-shadow">
             <div className="hero__release-glow" />
             <div className="hero__release-header">
-              <span className="label-md hero__release-label">Latest Release</span>
+              <span className="label-md hero__release-label">ULTIMO LANZAMIENTO</span>
               <span
                 className="material-symbols-outlined hero__play-icon"
                 style={{ fontVariationSettings: "'FILL' 1" }}

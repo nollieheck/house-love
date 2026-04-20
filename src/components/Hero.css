@@ -71,12 +71,26 @@
 }
 
 .hero__title {
-  color: var(--on-surface);
+  color: #000;
+  font-size: clamp(1.5rem, 5vw, 4.5rem);
+  line-height: 0.85;
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: clamp(1.2rem, 6.5vw, 2rem);
+    white-space: nowrap;
+  }
+
+  .desktop-only-br {
+    display: none;
+  }
 }
 
 .hero__subtitle {
   color: var(--on-surface-variant);
   max-width: 40rem;
+  font-weight: 500;
 }
 
 /* Buttons */
@@ -91,7 +105,7 @@
   padding: 1rem 2rem;
   border-radius: var(--radius-full);
   font-family: var(--font-label);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -159,7 +173,7 @@
 
 .hero__play-icon {
   color: var(--primary);
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   transition: transform var(--transition-fast), color var(--transition-fast);
 }
